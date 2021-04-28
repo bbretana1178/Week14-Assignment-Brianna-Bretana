@@ -1,0 +1,31 @@
+#Brianna Bretana
+#Sorted States Program
+#Calls on a exisiting list, sorts the values and writes to a new file
+
+
+def main():
+    #open the file
+    infile=open('states.txt','r')
+    #Read the contents of the file line by line
+    states_content=infile.readlines()
+
+    #Create empty list
+    good_list=[]
+    #Open the new file
+    outfile=open('sorted.txt','w')
+    #Loop that sorts the content of the list and iterates to write each line to
+    #the new file, also removes the newline character with the strip command
+    for line in sorted(states_content):
+        good_list.append(line.strip())
+        outfile.write(str(line))
+
+    #Prints the sorted list
+    print(good_list)
+
+    #Closes files
+    infile.close
+    outfile.close
+    
+#Calls Function
+main()
+
